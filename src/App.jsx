@@ -62,7 +62,10 @@ function Hero() {
           Пятый осенний выезд молодёжи
         </motion.p>
 
-        <h1 className="hero-title" aria-label={`${EVENT.number} ${EVENT.name}`}>
+        <h1 className="hero-title" aria-label={`${EVENT.theme} ${EVENT.number}: ${EVENT.name}`}>
+          <motion.span className="hero-theme" aria-hidden="true" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05, duration: 0.8, ease }}>
+            {EVENT.theme}
+          </motion.span>
           <span className="hero-num" aria-hidden="true">
             {chars.map((c, i) => (
               <span className={'digit' + (c === '.' ? ' dot' : '')} key={i}>
@@ -78,7 +81,7 @@ function Hero() {
         </h1>
 
         <motion.div className="hero-foot" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.05, duration: 0.7, ease }}>
-          <p className="hero-lead">{EVENT.datesLong}. Две ночи за городом, чтобы подняться выше — вместе.</p>
+          <p className="hero-lead">{EVENT.datesLong}, {EVENT.place}. Две ночи в горах, чтобы подняться выше — вместе.</p>
           <div className="hero-cta">
             <motion.a className="btn btn-sun" href="#register" whileTap={{ scale: 0.97 }}>
               Записаться на выезд
@@ -148,7 +151,7 @@ function Route({ count }) {
       <dl className="facts">
         <div><dt>Когда</dt><dd>{EVENT.datesLong}<small>{EVENT.weekdays}</small></dd></div>
         <div><dt>Взнос</dt><dd>{fmt.format(EVENT.price)}&nbsp;сом<small>две ночи, по {fmt.format(EVENT.perNight)}&nbsp;сом</small></dd></div>
-        <div><dt>Сбор</dt><dd>В WhatsApp-группе<small>ссылка откроется после регистрации</small></dd></div>
+        <div><dt>Где</dt><dd>{EVENT.place}<small>{EVENT.placeNote}. Время сбора — в WhatsApp-группе</small></dd></div>
         <div><dt>Кто едет</dt><dd>Молодёжь и друзья<small>младше 18 — с согласия родителей</small></dd></div>
       </dl>
       <div className="route-foot">

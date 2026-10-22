@@ -284,14 +284,14 @@ function Summit({ data, headRef, onShown, onAgain }) {
 
       <motion.div className="pass" initial={{ rotate: -2, scale: 0.94, opacity: 0 }} animate={{ rotate: 0, scale: 1, opacity: 1 }} transition={{ delay: 0.15, type: 'spring', stiffness: 140, damping: 14 }}>
         <div className="pass-top">
-          <span className="pass-ev">{EVENT.number}<small>{EVENT.name}</small></span>
+          <span className="pass-ev"><small className="pass-theme">{EVENT.theme}</small>{EVENT.number}<small>{EVENT.name}</small></span>
           <span className="pass-no mono">№&nbsp;{data.number ?? '—'}</span>
         </div>
         <p className="pass-name">{data.firstName} {data.lastName}</p>
         <div className="pass-meta mono">
           <div><span>Даты</span>{EVENT.datesShort}</div>
           <div><span>Взнос</span>{fmt.format(EVENT.price)} сом</div>
-          <div><span>Оплата</span>{data.payment}</div>
+          <div><span>Место</span>{EVENT.place}</div>
         </div>
       </motion.div>
 

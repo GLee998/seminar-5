@@ -5,7 +5,10 @@ export const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwyEP-N1VUK7S
 
 export const EVENT = {
   number: '5.0',
+  theme: 'Атмосфера Бога',
   name: 'Духовный подъём',
+  place: 'Кегети',
+  placeNote: 'Чуйская область',
   church: 'Источник Пробуждения',
   start: new Date('2026-10-30T08:00:00+06:00'),
   datesLong: '30 октября – 1 ноября',
