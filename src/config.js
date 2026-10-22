@@ -1,7 +1,7 @@
 /* Всё, что может поменяться, — здесь. */
 
 // URL веб-приложения Google Apps Script (см. README). Пусто — тестовый режим.
-export const SCRIPT_URL = '';
+export const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwyEP-N1VUK7SueP8FUVGJHi_zcc0ClJVwWsVgTixPIa99R_3Lr2fOHbF41hJVaGtGz-w/exec';
 
 export const EVENT = {
   number: '5.0',
